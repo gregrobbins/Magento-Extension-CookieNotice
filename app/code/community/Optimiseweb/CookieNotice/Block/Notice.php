@@ -4,19 +4,17 @@
  * Optimiseweb CookieNotice Block Notice
  *
  * @package     Optimiseweb_CookieNotice
- * @author      Sid Vel (sid@optimiseweb.co.uk)
- * @copyright   Copyright (c) 2013 Optimiseweb Ltd
+ * @author      Kathir Vel (sid@optimiseweb.co.uk)
+ * @copyright   Copyright (c) 2013 Optimise Web Limited
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
-{
+class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template {
 
     /**
      *
      * @return type
      */
-    public function _prepareLayout()
-    {
+    public function _prepareLayout() {
         return parent::_prepareLayout();
     }
 
@@ -25,8 +23,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function isEnabled()
-    {
+    public function isEnabled() {
         if (Mage::getStoreConfig('optimisewebcookienotice/general/enabled') == 1) {
             if ((Mage::getModel('core/cookie')->get('ow_cookie_notice') == 'closed') OR (Mage::getModel('core/cookie')->get('ow_cookie_notice') == 'hidden')) {
                 return FALSE;
@@ -43,8 +40,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function getLifetime()
-    {
+    public function getLifetime() {
         if (Mage::getStoreConfig('optimisewebcookienotice/general/lifetime')) {
             return Mage::getStoreConfig('optimisewebcookienotice/general/lifetime');
         } else {
@@ -58,8 +54,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function getMessage()
-    {
+    public function getMessage() {
         if (Mage::getStoreConfig('optimisewebcookienotice/message/message')) {
             return Mage::getStoreConfig('optimisewebcookienotice/message/message');
         } else {
@@ -72,8 +67,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function getCookiePageLink()
-    {
+    public function getCookiePageLink() {
         if (Mage::getStoreConfig('optimisewebcookienotice/message/cms_page')) {
             return Mage::getUrl() . Mage::getStoreConfig('optimisewebcookienotice/message/cms_page');
         } else {
@@ -86,8 +80,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function getCookieLinkText()
-    {
+    public function getCookieLinkText() {
         if (Mage::getStoreConfig('optimisewebcookienotice/message/link_text')) {
             return Mage::getStoreConfig('optimisewebcookienotice/message/link_text');
         } else {
@@ -100,8 +93,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function isTopBar()
-    {
+    public function isTopBar() {
         if ((Mage::getStoreConfig('optimisewebcookienotice/appearance/type') == 'bar') AND (Mage::getStoreConfig('optimisewebcookienotice/appearance/position_bar') == 'top')) {
             return TRUE;
         } else {
@@ -114,8 +106,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function topBarPaddingVisible()
-    {
+    public function topBarPaddingVisible() {
         if (Mage::getStoreConfig('optimisewebcookienotice/appearance/top_bar_padding')) {
             return Mage::getStoreConfig('optimisewebcookienotice/appearance/top_bar_padding') . 'px';
         } else {
@@ -128,8 +119,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function topBarPaddingClosed()
-    {
+    public function topBarPaddingClosed() {
         if (Mage::getStoreConfig('optimisewebcookienotice/appearance/top_bar_padding_closed')) {
             return Mage::getStoreConfig('optimisewebcookienotice/appearance/top_bar_padding_closed') . 'px';
         } else {
@@ -142,8 +132,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return string
      */
-    public function getContainerClass()
-    {
+    public function getContainerClass() {
         $containerClass = Mage::getStoreConfig('optimisewebcookienotice/appearance/container_class');
         $type = Mage::getStoreConfig('optimisewebcookienotice/appearance/type');
         $barPosition = Mage::getStoreConfig('optimisewebcookienotice/appearance/position_bar');
@@ -192,8 +181,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return string
      */
-    public function getContentClass()
-    {
+    public function getContentClass() {
         $contentClass = Mage::getStoreConfig('optimisewebcookienotice/appearance/content_class');
 
         $class = 'cookienotice-content';
@@ -209,8 +197,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function isPersistent()
-    {
+    public function isPersistent() {
         return (bool) Mage::getStoreConfig('optimisewebcookienotice/behaviour/persistent');
     }
 
@@ -219,8 +206,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function isCloseEnabled()
-    {
+    public function isCloseEnabled() {
         return (bool) Mage::getStoreConfig('optimisewebcookienotice/behaviour/close_enabled');
     }
 
@@ -229,8 +215,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function getCloseText()
-    {
+    public function getCloseText() {
         if (Mage::getStoreConfig('optimisewebcookienotice/behaviour/close_text')) {
             return Mage::getStoreConfig('optimisewebcookienotice/behaviour/close_text');
         } else {
@@ -243,8 +228,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function isAutoHide()
-    {
+    public function isAutoHide() {
         return (bool) Mage::getStoreConfig('optimisewebcookienotice/behaviour/autohide');
     }
 
@@ -253,8 +237,7 @@ class Optimiseweb_CookieNotice_Block_Notice extends Mage_Core_Block_Template
      *
      * @return boolean
      */
-    public function getAutoHideSeconds()
-    {
+    public function getAutoHideSeconds() {
         if (Mage::getStoreConfig('optimisewebcookienotice/behaviour/autohide_time')) {
             return Mage::getStoreConfig('optimisewebcookienotice/behaviour/autohide_time') . '000';
         } else {
