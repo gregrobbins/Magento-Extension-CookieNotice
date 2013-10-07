@@ -8,15 +8,13 @@
  * @copyright   Copyright (c) 2013 Optimise Web Limited
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-class Optimiseweb_CookieNotice_Model_System_Config_Source_Cmspages
-{
+class Optimiseweb_CookieNotice_Model_System_Config_Source_Cmspages {
 
     /**
      *
      * @return array
      */
-    public function toOptionArray()
-    {
+    public function toOptionArray() {
         $cmsPagesArray = array();
 
         $pages = Mage::getModel('cms/page')->getCollection();
