@@ -12,7 +12,7 @@
     <tabs>
         <optimisewebconfig translate="label comment" module="cookienotice">
             <label>Optimise Web</label>
-            <sort_order>0</sort_order>
+            <sort_order>1000</sort_order>
         </optimisewebconfig>
     </tabs>
 
