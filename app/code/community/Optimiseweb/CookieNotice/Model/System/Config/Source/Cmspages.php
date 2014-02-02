@@ -5,16 +5,18 @@
  *
  * @package     Optimiseweb_CookieNotice
  * @author      Kathir Vel (sid@optimiseweb.co.uk)
- * @copyright   Copyright (c) 2013 Optimise Web Limited
+ * @copyright   Copyright (c) 2014 Optimise Web
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-class Optimiseweb_CookieNotice_Model_System_Config_Source_Cmspages {
+class Optimiseweb_CookieNotice_Model_System_Config_Source_Cmspages
+{
 
     /**
      *
      * @return array
      */
-    public function toOptionArray() {
+    public function toOptionArray()
+    {
         $cmsPagesArray = array();
 
         $pages = Mage::getModel('cms/page')->getCollection();
